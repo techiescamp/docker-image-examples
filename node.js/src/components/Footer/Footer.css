@@ -1,0 +1,35 @@
+footer {
+    background-color: #27374D;
+    color: #DDE6ED;
+}
+
+.list-unstyled a {
+    text-decoration: none;
+    color: #DDE6ED;
+}
+
+.list-unstyled li {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.list-unstyled a:hover {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: rgb(147, 232, 232)
+}
+
+.f3 ul li {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    footer, .f1 h4, .f2, .f3  {
+        font-size: 16px;
+    }
+    .f1 h2 {
+        font-size: 20px;
+    }
+}
