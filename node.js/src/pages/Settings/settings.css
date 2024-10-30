@@ -1,0 +1,16 @@
+/* Notification paragraph base styles */
+.notification {
+    opacity: 0;
+    transition: opacity 0.5s ease-out; /* Smooth transition of 0.5 seconds */
+}
+
+/* Notification paragraph visible state */
+.notification.visible {
+    opacity: 1; /* Fully visible */
+}
+
+/* Notification paragraph hidden state */
+.notification.hidden {
+    opacity: 0; /* Fully hidden */
+    display: none;
+}

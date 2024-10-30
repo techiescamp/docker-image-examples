@@ -1,0 +1,165 @@
+.timer-container {
+    min-height: 90vh;
+    background-color: #DDE6ED;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23c7c4cb' fill-opacity='0.18'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+#timerNavigation {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#timerNavigation .nav-item .nav-link:hover {
+    color: yellow !important;
+}
+
+.timerApp {
+    text-align: center;
+    width: 45% !important;
+    border: 1px solid rgba(232, 235, 238, 0.3);
+}
+
+#addBtn {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-style: dashed;
+    letter-spacing: 1px;
+    /* font-size: 16px; */
+}
+
+#addBtn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+#taskform {
+    display: none;
+}
+
+.dropdown-toggle:focus {
+    outline: none !important;
+}
+
+/* task form */
+.descript, .project {
+    text-align: justify;
+    padding: 10px;
+    background-color: rgb(227, 227, 128);
+}
+
+.project {
+    background-color: rgb(116, 244, 116);
+}
+
+/* timer */
+.timer-pill.nav-pills .nav-link.active {
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.timer-pill.nav-pills .nav-link:hover {
+    color: yellow !important;
+}
+
+#timer-display {
+    font-size: 5em;
+}
+
+#stop {
+    display: none;
+}
+
+#stop:hover {
+    transform: scale(1.2);
+    border: none;
+}   
+
+#finish {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+#dropdown-task {
+    float: right;
+}
+
+#formElement {
+    clear: both;
+}
+
+.act {
+    float: right;
+    margin-right: 10px;
+    color: grey;
+    font-weight: 600;
+}
+
+/* TReport */
+#report {
+    max-width: 60% !important;
+}
+
+#report .modal-content {
+    align-items: center;
+}
+
+#report .modal-body {
+    width: 100%;
+}
+
+/* TList */
+#mtableList.modal-dialog {
+    max-width: 75%;
+}
+
+#tableList td,  #tableList th {
+    border: 0.0625rem solid #ddd;
+    padding: 0.75rem;
+}
+#tableList tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  #tableList tr:hover {
+    background-color: #ddd;
+  }
+
+  #tableList th {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: left;
+    background-color: #0f4871;
+    color: white;
+  }
+
+
+  /* TContent */
+  .pomo-title {
+    color: tomato;
+    font-weight: 700;
+    border-bottom: 4px solid tomato;
+    width: fit-content;
+  }
+  .pomo-content {
+    font-size: 1.2rem;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    word-spacing: 2px;
+    color: #0f4871;
+  }
+
+
+@media screen and (max-width: 767px) {
+    .timerApp {
+        width: 100% !important;
+    }
+    #task-btn {
+        display: flex;
+    }
+    .pomo-title {
+        font-size: 1.3rem;
+      }
+      .pomo-content {
+        font-size: 1rem;
+      }
+    
+}
