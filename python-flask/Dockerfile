@@ -1,20 +1,29 @@
-# Use Ubuntu as the base image
-FROM ubuntu:22.04
+ARG PYTHON_VERSION=3.12
+FROM python:${PYTHON_VERSION}-slim
 
-# Install Python3 and Pip
-RUN apt-get update && apt-get install -y python3 python3-pip
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy contents into the /app directory of the container
-COPY . /app
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
 
-# Install any needed dependencies specified in requirements.txt
-RUN pip install Flask
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    python -m pip install -r requirements.txt
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
+USER appuser
 
-# Run app.py when the container launches
-CMD ["python3", "hello.py"]
+COPY . .
+
+EXPOSE 8000
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]
