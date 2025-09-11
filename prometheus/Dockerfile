@@ -1,5 +1,5 @@
 # Use Ubuntu as the base image
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 # Avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
@@ -11,10 +11,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Prometheus
-RUN wget https://github.com/prometheus/prometheus/releases/download/v2.53.1/prometheus-2.53.1.linux-amd64.tar.gz \
-    && tar xvfz prometheus-2.53.1.linux-amd64.tar.gz \
-    && mv prometheus-2.53.1.linux-amd64 /usr/local/prometheus \
-    && rm prometheus-2.53.1.linux-amd64.tar.gz
+RUN wget https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz \
+    && tar xvfz prometheus-3.5.0.linux-amd64.tar.gz \
+    && mv prometheus-3.5.0.linux-amd64 /usr/local/prometheus \
+    && rm prometheus-3.5.0.linux-amd64.tar.gz
 
 # Set up Prometheus configuration
 COPY prometheus.yml /usr/local/prometheus/prometheus.yml
